@@ -1,0 +1,5 @@
+//---------------------------------------------
+// include/part2.vm
+// entity name = "${entity.name}" 
+// ( Date ISO $today.date("yyyy-MM-dd") - Time $today.time )
+//---------------------------------------------

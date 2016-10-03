@@ -1,0 +1,16 @@
+//
+// include and parse examples 
+//
+
+#set($var1 = "abc" )
+${DOLLAR}var1 = $var1
+
+----- parse : the vm file is parsed 
+#parse("include/part1.vm")
+
+----- include : the vm file is just included as a static file (not parsed) 
+#include("include/part2.vm")
+------------------------------
+
+${DOLLAR}var1 = $var1
+${DOLLAR}var2 = $var2

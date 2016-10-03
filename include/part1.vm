@@ -1,0 +1,18 @@
+//---------------------------------------------
+// include/part1.vm
+// entity name = "${entity.name}" 
+// ( Date ISO $today.date("yyyy-MM-dd") - Time $today.time )
+//
+// Entity attributes :
+#foreach( $attribute in $entity.attributes )
+// . $attribute.name 
+#end
+//
+// Variable set in the calling file 
+// ${DOLLAR}var1 = $var1
+//
+#set($var1 = "zzz" )
+// var1 changed : $var1
+#set($var2 = 123 )
+// var2 set : $var2
+//---------------------------------------------
