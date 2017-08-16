@@ -26,6 +26,8 @@ $var = {
 
 //--- LITERAL VALUES ( case 3 ) : JSON with 'toJSON' for ALL
 $var = $values.toJSON();
+$var = $values.toJSON("${NEWLINE}");
+$var = $values.toJSON("${NEWLINE}${TAB}");
 
 //--- LITERAL VALUES ( case 4 ) : JSON with 'toJSON' for a LIST OF ATTRIBUTES
 $var = $values.toJSON($entity.keyAttributes); // KEY
