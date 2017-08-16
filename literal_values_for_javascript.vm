@@ -28,10 +28,10 @@ $var = {
 $var = $values.toJSON();
 $var = $values.toJSON("${NEWLINE}");
 $var = $values.toJSON("${NEWLINE}${TAB}");
+$var = $values.toJSON("${NEWLINE}${TAB}", "${NEWLINE}");
 
 //--- LITERAL VALUES ( case 4 ) : JSON with 'toJSON' for a LIST OF ATTRIBUTES
 $var = $values.toJSON($entity.keyAttributes); // KEY
 $var = $values.toJSON($entity.nonKeyAttributes); // NON KEY
-
-} ;
+$var = $values.toJSON($entity.nonKeyAttributes, "${NEWLINE}${TAB}", "${NEWLINE}"); // NON KEY
 
