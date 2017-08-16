@@ -1,0 +1,15 @@
+${SHARP} Python class using literal values for entity ${entity.name} 
+${SHARP} Created on $today.date ( Time $today.time )
+
+
+class ${entity.name}:
+	
+	${SHARP} Default constructor.
+	def __init__(self):
+		${SHARP} super(self).__init__();
+$env.setLanguage('Python') ## Mandatory 
+#set ( $values = $fn.buildValues($entity.attributes, 1) )
+
+#foreach( $attribute in $entity.attributes )
+		self.$attribute.name = $values.getValue(${attribute.name})
+#end
