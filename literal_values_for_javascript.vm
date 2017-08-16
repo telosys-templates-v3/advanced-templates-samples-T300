@@ -15,13 +15,21 @@ $var.${attribute.name} = $values.getValue(${attribute.name}) ;
 #end
 
 
-//--- LITERAL VALUES ( case 2 ) : JSON
+//--- LITERAL VALUES ( case 2 ) : JSON one by one
 #set ( $values = $fn.buildValues($entity.attributes, 2) )
 $var = { 
 #foreach( $attribute in $entity.attributes)
 "${attribute.name}" : $values.getValue(${attribute.name}) #if ( $foreach.count < $entity.attributes.size() ),
 #end
 #end
+};
+
+//--- LITERAL VALUES ( case 3 ) : JSON with 'toJSON' for ALL
+$var = $values.toJSON();
+
+//--- LITERAL VALUES ( case 4 ) : JSON with 'toJSON' for a LIST OF ATTRIBUTES
+$var = $values.toJSON($entity.keyAttributes); // KEY
+$var = $values.toJSON($entity.nonKeyAttributes); // NON KEY
 
 } ;
 
