@@ -3,8 +3,6 @@
  * Created on $today.date ( Date ISO $today.date("yyyy-MM-dd") - Time $today.time )
  */
 
-Example of "generator" usage
-
 Target :
  
  . target.entityName = "$target.entityName"
