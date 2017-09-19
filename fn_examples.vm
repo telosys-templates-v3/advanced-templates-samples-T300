@@ -77,4 +77,12 @@ Setting "FOO"...
 
  ${DOLLAR}fn.concatLists([1,2,3], [10,11,12]) : $fn.concatLists([1,2,3], [10,11,12])
 
+--- Play with defined/undefined variables
+#set ( $FOO1 = "FooValue1" )
+FOO1 has been set = "$FOO1"
 
+ ${DOLLAR}fn.isDefined("FOO1") = $fn.isDefined("FOO1")    ( true expected )
+ ${DOLLAR}fn.isDefined("FOO2") = $fn.isDefined("FOO2")    ( false expected )
+ 
+ "${DOLLAR}fn.get("FOO1", "defaultValue1")" = "$fn.get("FOO1", "defaultValue1")" 
+ "${DOLLAR}fn.get("FOO2", "defaultValue2")" = "$fn.get("FOO2", "defaultValue2")" 
